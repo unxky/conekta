@@ -1,3 +1,4 @@
+<?php
 function make_payment_conekta($rahakkeitaId, $addressData, $referenceData, $referenceMoreInfo, $fields){
   $keys = arenapublica_suscripcion_get_api_key();
   \Conekta\Conekta::setApiKey( $keys["sk"] );
@@ -152,3 +153,5 @@ function make_payment_conekta($rahakkeitaId, $addressData, $referenceData, $refe
 
   return($status == 200) ? $content : array("error" => array("status"=> $status, "message" => $message ) );
 }//make_payment_conekta
+
+?>
